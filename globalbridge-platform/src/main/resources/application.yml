@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    encoding:
+      charset: utf-8
+      enabled: true
+spring:
+  datasource:
+    driver-class-name: 
+    url: jdbc:mysql://119.197.240.226:3306/globalbridge?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: Gbgbgb032!
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create    #create 로 바꾸기전에 주의할점 , create로 설정하고 서버를 재실행하면 기존 테이블 안에 있던 모든 레코드가 날아가고 모든 테이블이 새로 생성된다.
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 3MB
+        
+  security:
+    user:
+      name: global
+      password: 1234
+logging:
+  file:
+    path: C:\workspace\springbootwork\globalbridge-platform
+    max-history: 1
+    max-size: 500MB
+    name: spring_log
+  level:
+    root: info  
+      
